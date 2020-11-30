@@ -1,0 +1,17 @@
+.media {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+}
+
+.media__image {
+    height: 36px;
+    width: 36px;
+    display: block;
+    float: left; 
+    background-color: var(--global-accent);
+    border-radius: var(--global-radius-round);
+}
+
+.media__image--placeholder {
+    background-color: var(--global-accent);
+}
