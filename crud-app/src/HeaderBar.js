@@ -5,7 +5,9 @@ import './styles/layout/header-bar.css';
 function HeaderBar() {
     return (
         <header className="header-bar">
-            <User />
+            <div className="header-bar__inner">
+                <User />
+            </div>
         </header>
     )
 }

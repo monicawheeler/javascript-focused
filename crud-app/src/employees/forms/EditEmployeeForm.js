@@ -1,24 +1,32 @@
 import React, { useState, useEffect } from 'react';
 
-const EditEmployeeForm = props => {
-  const [employee, setEmployee] = useState(props.currentEmployee);
+const EditEmployeeForm = (props) => {
+  console.log("🌭", props);
+  // const [employee, setEmployee] = useState(props.currentEmployee);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
-    setEmployee({ ...employee, [name]: value });
+    // setEmployee({ ...employee, [name]: value });
   }
 
-  useEffect(() => {
-    setEmployee(props.currentEmployee)
-  }, [props])
+  // useEffect(() => {
+  //   setEmployee(props.currentEmployee)
+  // }, [props]);
+
+  const matchEmployee = (e) => e.id === props.currentEmployee;
+  const employee = props.allEmployees.find(matchEmployee);
+
+  // TODO
+  // set state to the new data on save
+  // link back to the table 
 
   return (
     <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        props.updateEmployee(employee.id, employee);
-      }}
+      // onSubmit={(event) => {
+      //   event.preventDefault();
+      //   props.updateEmployee(employee.id, employee);
+      // }}
     >
       <label>Name</label>
       <input
@@ -27,6 +35,7 @@ const EditEmployeeForm = props => {
         value={employee.name}
         onChange={handleInputChange}
       />
+
       <label>Data of Birth</label>
       <input
         type="date"

@@ -1,27 +1,39 @@
 import React, { useState } from 'react';
 
 const AddEmployeeForm = props => {
-	const initialFormState = { id: null, name: '', birthdate: '', role: '', country: '', salary: '' }
-	const [ employee, setEmployee ] = useState(initialFormState)
+    const initialFormState = {
+        id: null,
+        name: '',
+        birthdate: '',
+        role: '',
+        country: '',
+        salary: ''
+    };
+	const [ employee, setEmployee ] = useState(initialFormState);
 
 	const handleInputChange = event => {
-		const { name, value } = event.target
+		const { name, value } = event.target;
 
-		setEmployee({ ...employee, [name]: value })
+		setEmployee({ ...employee, [name]: value });
 	}
 
 	return (
 		<form
 			onSubmit={event => {
-				event.preventDefault()
-				if (!employee.name || !employee.salary) return
+				event.preventDefault();
+				if (!employee.name || !employee.salary) return;
 
-				props.addEmployee(employee)
-				setEmployee(initialFormState)
+				props.addEmployee(employee);
+				setEmployee(initialFormState);
 			}}
 		>
             <label>Name</label>
-            <input type="text" name="name" value={employee.name} onChange={handleInputChange} />
+            <input
+                type="text"
+                name="name"
+                value={employee.name}
+                onChange={handleInputChange}
+            />
             <label>Data of Birth</label>
             <input type="date" name="birthdate" value={employee.birthdate} onChange={handleInputChange} />
             <label>Job title</label>
