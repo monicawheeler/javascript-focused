@@ -20,25 +20,25 @@ td {
 .table__thead {
     margin-bottom: var(--global-gutter-small);
     padding-inline-start: var(--table-gutter);
+    padding-inline-end: var(--table-gutter);
 }
 
 .table__col-heading {
     color: var(--global-gray-1);
 }
 
-/* TODO rework to use percents */
 .table__grid-row {
     display: grid;
-    grid-template-columns: 206px 217px 160px 194px 143px;
-    grid-gap: var(--table-gutter);;
+    grid-template-columns: 20.12% 21.19% 15.63% 18.95% 13.95%; /* percents based on 1024px total */
+    grid-gap: var(--table-gutter);
     align-items: center;
 }
 
 .table__data-row {
     padding-top: 32px;
-    padding-inline-start: var(--table-gutter);;
+    padding-inline-start: var(--table-gutter);
     padding-bottom: 32px;
-    padding-inline-end: var(--table-gutter);;
+    padding-inline-end: var(--table-gutter);
     background-color: var(--global-white);
     margin-bottom: var(--global-gutter-small);
     border-radius: var(--global-radius);

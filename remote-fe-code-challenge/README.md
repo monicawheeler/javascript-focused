@@ -3,7 +3,6 @@
 TODO:
 - [ ] add tests jest
 - [ ] update readme so it's thorough and concise
-- [ ] add styles
 
 ## Dependencies
 TODO: explain these dependencies
