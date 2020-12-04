@@ -14,6 +14,10 @@
     border-bottom: 1px solid var(--global-gray-0);
 }
 
+.form__heading {
+    margin-bottom: 8px;
+}
+
 .form__body {
     padding-top: 48px;
     padding-inline-start: 240px;
@@ -29,13 +33,20 @@
     margin-bottom: 30px;
 }
 
+.form__field:hover .form__label {
+    color: var(--global-primary);
+}
+
 .form__label {
-    padding-bottom: var(--global-gutter-small);
+    padding-bottom: var(--global-gutter-xsmall);
     color: var(--global-gray-2);
 }
 
 .form__input {
-    margin-bottom: 8px;
+    padding-bottom: 8px;
+    font-size: var(--font-size-20);
+    font-weight: var(--weight-regular);
+    line-height: 1.21;
     border-bottom: 1.5px solid var(--global-gray-2);
 }
 
@@ -45,10 +56,20 @@
     border-bottom: 1.5px solid var(--global-primary);
 }
 
+.form__input-footer {
+    margin-top: 10px;
+    color:var(--global-black-transparent);
+
+}
+
 .form__footer {
+    padding-top: 32px;
+    padding-bottom: 32px;
     display: flex;
     justify-content: center;
     background-color: var(--global-background-light);
+    border-bottom-right-radius: var(--global-radius);
+    border-bottom-left-radius: var(--global-radius);
 }
 
 ::-webkit-input-placeholder {

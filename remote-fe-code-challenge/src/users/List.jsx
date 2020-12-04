@@ -21,7 +21,7 @@ function List({ match }) {
                     <h2 className="page-header__title t-display">People</h2>
                     <p className="page-header__caption t-caption-small">###### employees</p>
                 </div>
-                <Link className="page-header__action button" to={`${path}/add`}>
+                <Link className="page-header__action button button--callout" to={`${path}/add`}>
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/></svg>
                     <span className="page-header__action-text">Add employee</span>
                 </Link>
@@ -51,13 +51,13 @@ function List({ match }) {
                                 <h2 className="table__row-heading t-row-heading">{user.name}</h2>
                                 <p className="t-caption">{user.birthdate}</p>
                             </span>
-                            <span className="t-body" role="cell">{user.role}</span>
+                            <span className="t-body" role="cell">{user.jobTitle}</span>
                             <span className="t-body" role="cell">{user.country}</span>
                             <span className="t-body" role="cell">
                                 {user.salary} USD <span className="t-caption-small">per year</span>
                             </span>
                             <span className="t-body" role="cell">
-                                <Link to={`${path}/edit/${user.id}`} className="button">Edit</Link>
+                                <Link to={`${path}/edit/${user.id}`} className="button button--outlined">Edit</Link>
                             </span>
                         </div>
                     )}

@@ -60,7 +60,7 @@ function AddEdit({ history, match }) {
         if (!isAddMode) {
             // get user and set form fields
             userService.getById(id).then(user => {
-                const fields = ['name', 'country'];
+                const fields = ['name', 'country', 'birthdate', 'jobTitle', 'salary'];
                 fields.forEach(field => setValue(field, user[field]));
                 setUser(user);
             });
@@ -71,12 +71,12 @@ function AddEdit({ history, match }) {
         <form className="form" onSubmit={handleSubmit(onSubmit)} onReset={reset}>
             {isAddMode ?
                 <div className="form__header">
-                    <h1 className="t-form-heading">Add a new employee</h1>
+                    <h1 className="form__heading t-form-heading">Add a new employee</h1>
                     <p className="t-caption">Fill out the information of your new employee.</p>
                 </div>
                 :
                 <div className="form__header">
-                    <h1 className="t-form-heading">Edit employee</h1>
+                    <h1 className="t-form-heading t-form-heading">Edit employee</h1>
                     <p className="t-caption">Edit the information your employee.</p>
                 </div>
             }
@@ -90,6 +90,7 @@ function AddEdit({ history, match }) {
                         className={`form__input ${errors.name ? 'is-invalid' : ''}`}
                         placeholder="e.g. Jane Doe"
                     />
+                    <p className="form__input-footer t-form-label">First and last names</p>
                     <div className="invalid-feedback">{errors.name?.message}</div>
                 </div>
                 <div className="form__field">
@@ -101,6 +102,7 @@ function AddEdit({ history, match }) {
                         className={`form__input ${errors.birthdate ? 'is-invalid' : ''}`}
                         placeholder="e.g. 17/02/1990"
                     />
+                    <p className="form__input-footer t-form-label">DD/MM/YYYY</p>
                     <div className="invalid-feedback">{errors.birthdate?.message}</div>
                 </div>
                 <div className="form__field">
@@ -112,6 +114,7 @@ function AddEdit({ history, match }) {
                         className={`form__input ${errors.jobTitle ? 'is-invalid' : ''}`}
                         placeholder="e.g. Product manager"
                     />
+                    <p className="form__input-footer t-form-label">What is their role?</p>
                     <div className="invalid-feedback">{errors.jobTitle?.message}</div>
                 </div>
                 <div className="form__field">
@@ -369,6 +372,7 @@ function AddEdit({ history, match }) {
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
+                    <p className="form__input-footer t-form-label">Where are they based?</p>
                     <div className="invalid-feedback">{errors.country?.message}</div>
                 </div>
                 <div className="form__field">
@@ -380,15 +384,16 @@ function AddEdit({ history, match }) {
                         className={`form__input ${errors.salary ? 'is-invalid' : ''}`}
                         placeholder="e.g. 50000"
                     />
+                    <p className="form__input-footer t-form-label">Gross yearly salary</p>
                     <div className="invalid-feedback">{errors.salary?.message}</div>
                 </div>
             </div>
             <div className="form__footer">
+                <Link to={isAddMode ? '.' : '..'} className="button button--outlined">Cancel</Link>
                 <button className="button" type="submit" disabled={formState.isSubmitting}>
                     {formState.isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
                     Save
                 </button>
-                <Link to={isAddMode ? '.' : '..'}>Cancel</Link>
             </div>
         </form>
     );
