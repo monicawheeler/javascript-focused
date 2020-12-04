@@ -14,7 +14,7 @@ const EmployeeTable = props => {
       aria-label="Employees"
       aria-describedby="Employees_table_desc">
       <div class="sr-only" id="Employees_table_desc">
-        Employees list
+        List of employees which allows you to edit and review their information
       </div>
       <div className="table__thead" role="rowgroup">
         <div className="table__grid-row" role="row">
@@ -24,6 +24,7 @@ const EmployeeTable = props => {
           <span className="table__col-heading t-column-heading" role="columnheader">Salary</span>
         </div>
       </div>
+      
       <div className="table__tbody" role="rowgroup">
       {employees.length > 0 ? (
           employees.map((employee) => (
