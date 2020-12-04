@@ -1,7 +1,4 @@
-# Remote Front-End Code Challenge - Monica Wheeler
-
-TODO:
-- [ ] add tests jest
+# Remote | Front-End Code Challenge - Monica Wheeler
 
 ## Project Specifications
 The design files can be found at [Figma](https://www.figma.com/file/zm70bHzCxggL3GwliCV3GW/Front-end-challenge)
@@ -28,3 +25,5 @@ Please note that the profile icon is different than the design. This is because 
 ### Accessibility
 With the data table, I am using generic `div` and `span` elements in order to achieve design specifications, then adding aria roles to reintroduce native table accessbility. This will look like a data table to assistive technology while achieving the desired design visuals.
 
+### Alerts
+Alerts are implemented to notify the user of actions but without designs, are hidden with CSS. This is something I like to have in place and can be styled at a later time. 
