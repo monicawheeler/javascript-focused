@@ -99,7 +99,7 @@ function Alert({ id, fade }) {
     if (!alerts.length) return null;
 
     return (
-        <div>
+        <div className="sr-only">
             {alerts.map((alert, index) =>
                 <div key={index} className={cssClasses(alert)}>
                     <a className="close" onClick={() => removeAlert(alert)}>&times;</a>

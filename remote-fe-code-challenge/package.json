@@ -1,10 +1,6 @@
 {
     "name": "remote-fe-code-challenge",
     "version": "1.0.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/monicawheeler/remote-fe-code-challenge.git"
-    },
     "scripts": {
         "build": "webpack --mode production",
         "start": "webpack-dev-server --open"
