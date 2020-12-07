@@ -1,6 +1,6 @@
 {
-  "short_name": "Covid Map",
-  "name": "Covid-19 map",
+  "short_name": "State Exploration",
+  "name": "React state exploration project",
   "icons": [
     {
       "src": "favicon.ico",
